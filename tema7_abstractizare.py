@@ -21,34 +21,49 @@ class Cerc(FormaGeometrica):
     def descrie(self):
         print(f'Sunt un cerc')
 
-    def get_raza(self):
+    @property
+    def raza(self):
+        return self.__raza
+
+    @raza.getter
+    def raza(self):
         print('Luam raza')
         return self.__raza
 
-    def set_latura(self, valoare):
+    @raza.setter
+    def raza(self, valoare):
         print(f'Schimbam valoare razei cu {valoare}')
         self.__raza = valoare
 
-    def del_latura(self):
+    @raza.deleter
+    def raza(self):
         print('Se sterge raza')
-        del self.__raza
+        self.__raza = None
 
 
 class Patrat(FormaGeometrica):
+
     def __init__(self, latura):
         self.__latura = latura
 
-    def get_latura(self):
+    @property
+    def latura(self):
+        return self.__latura
+
+    @latura.getter
+    def latura(self):
         print('Luam latura')
         return self.__latura
 
-    def set_latura(self, valoare):
+    @latura.setter
+    def latura(self, valoare):
         print(f'Schimbam valoare laturii cu {valoare}')
         self.__latura = valoare
 
-    def del_latura(self):
+    @latura.deleter
+    def latura(self):
         print('Se sterge latura')
-        del self.__latura
+        self.__latura = None
 
     def aria(self):
         return self.__latura ** 2
@@ -58,25 +73,26 @@ class Patrat(FormaGeometrica):
 
 
 c = Cerc(12)
-print(c.aria())
+print(c.aria(), 'Aria cercului')
 c.descrie()
-
+c.raza = 3  # set
+c.raza  # get
+c.descrie()
+print(c.aria(), 'Aria cercului')
+del c.raza  # del
+print('_'*70)
 p = Patrat(4)
-print(p.aria())
+print(p.aria(), 'Aria patratului')
 p.descrie()
-
+p.latura = 3  # set
+p.latura  # get
+p.descrie()
+print(p.aria(), 'Aria patratului')
+del p.latura  # del
+print('_'*70)
 a = FormaGeometrica()
 a.descrie()
 try:
     a.aria()
 except NotImplementedError:
     print('Forma geometrica este clasa abstracta')
-
-
-
-
-
-
-
-
-
