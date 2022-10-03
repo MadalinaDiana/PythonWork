@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/TemeItFactory.iml" filepath="$PROJECT_DIR$/.idea/TemeItFactory.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../proiectcurs1/.idea/proiectcurs1.iml" filepath="$PROJECT_DIR$/../proiectcurs1/.idea/proiectcurs1.iml" />
-    </modules>
-  </component>
-</project>
